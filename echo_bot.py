@@ -24,6 +24,10 @@ def get_info(message):
 def echo_message(message):
     bot.reply_to(message, message.text)
 
+@bot.message_handler(func=lambda message: True)
+def respond_to_question(message):
+    bot.send_sticker(chat_id=message.id, data="hello")
+
 def listener(messages):
     for m in messages:
         m
